@@ -19,8 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/home', function () {
-    return view('common.master');
-});
+    return view('home');
+})->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
