@@ -16,7 +16,7 @@ class AlllistController extends Controller
      */
     public function index()
     {   
-        $lists = Alllist::where('user_id', auth()->id())->get();
+        $lists = Alllist::where('user_id', auth()->id())->paginate(6);
         
         return view("Todolist::allLists",compact('lists'));
     }

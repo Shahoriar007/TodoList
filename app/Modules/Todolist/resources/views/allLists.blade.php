@@ -92,6 +92,11 @@
 
             </div>
 
+            <!-- Pagination links -->
+      <div class="d-flex justify-content-center">
+        {!! $lists->links() !!}
+      </div>
+
 
         </main>
     </div>
