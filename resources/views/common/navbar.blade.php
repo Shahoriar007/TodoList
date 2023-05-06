@@ -10,7 +10,7 @@
         <div class="left"></div>
         <div class="right"></div>
       </div>
-      <li class="nav-item">
+      <li class="nav-item ">
         <a class="nav-link" href="{{ route('home') }}"><i class="fas fa-tachometer-alt"></i>Home</a>
       </li>
       <li class="nav-item active">
