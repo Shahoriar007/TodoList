@@ -18,4 +18,15 @@ class Task extends Model
             'list_id' => $request->list_id,
         ]);
     }
+
+    public static function deleteTask($request)
+    {
+        $id = decrypt($request->id);
+
+        $data = Task::find($id);
+        
+        if ($data) {
+            $data->delete();
+        }
+    }
 }

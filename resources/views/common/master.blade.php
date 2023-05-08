@@ -55,7 +55,7 @@
 });
 </script>
 
-@yield('modal')
+@yield('js')
 
 
 </body>
