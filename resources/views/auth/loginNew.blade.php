@@ -39,6 +39,7 @@
                                 <input type="submit" name="login" id="login" class="form-submit" value="Login"/>
                             </div>
                         </form>
+                        <p>If you are not registered, please <a href="{{ route('register') }}">Sign Up</a></p>
                     </div>
                     <div class="signup-image">
                         <figure><img src="{{ asset('assets/frontend/images/signup-image.jpg')}}" alt="sing up image"></figure>
