@@ -18,6 +18,6 @@ Route::middleware('auth')->group(function () {
     //  For Tasks
     Route::get('/all-tasks/{id}', [App\Modules\TodoList\Http\Controllers\Lists\TaskController::class, 'index'])->name('all_tasks');
     Route::post('/create-tasks', [App\Modules\TodoList\Http\Controllers\Lists\TaskController::class, 'create'])->name('create_tasks');
-
+    Route::post('/edit-task/{id}', [App\Modules\TodoList\Http\Controllers\Lists\TaskController::class, 'edit'])->name('edit_task');
     Route::post('/delete-task/{id}', [App\Modules\TodoList\Http\Controllers\Lists\TaskController::class, 'destroy'])->name('dalete_task');
 });

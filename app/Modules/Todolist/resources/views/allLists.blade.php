@@ -42,7 +42,7 @@
                                                 @csrf
                                                 <div class="form-group">
                                                     <label for="Name">List Name</label>
-                                                    <input type="name" name="name" class="form-control"
+                                                    <input type="text" name="name" class="form-control"
                                                         id="exampleInputEmail1" aria-describedby="emailHelp"
                                                         value="{{$list->name}}">
                                                     @error('name')

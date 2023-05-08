@@ -33,13 +33,52 @@
                                 </label>
                             </div>
 
-                            <form class="remove" id="myForm{{$task->id}}" action="{{ route('dalete_task', ['id' => encrypt($task->id)]) }}" method="POST"
+                            <button data-toggle="modal" data-target="#edit_{{$task->id}}">
+                                <i class="fa fa-edit"></i>
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal" id="edit_{{$task->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+
+                                        <div class="modal-body">
+
+                                            <form action="{{ route('edit_task', ['id' => encrypt($task->id)]) }}" method="post">
+                                                @csrf
+                                                <div class="form-group">
+
+                                                    <label for="Name">Task</label>
+                                                    <input type="text" name="task" class="form-control"
+                                                        id="exampleInputEmail1" aria-describedby="emailHelp"
+                                                        value="{{$task->task}}">
+
+                                                </div>
+
+                                                <button type="submit" class="btn btn-addList">Submit</button>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <form class="remove" id="myForm{{$task->id}}"
+                                action="{{ route('dalete_task', ['id' => encrypt($task->id)]) }}" method="POST"
                                 class="d-inline">
                                 @csrf
-                                    <a href="#" onclick="document.getElementById('myForm{{$task->id}}').submit(); return false;" type="submit">
-                                        <i class="mdi mdi-close-circle-outline"></i>
-                                    </a>
-                                    
+
+                                <a href="#"
+                                    onclick="document.getElementById('myForm{{$task->id}}').submit(); return false;"
+                                    type="submit">
+                                    <i class="mdi mdi-close-circle-outline"></i>
+                                </a>
+
                             </form>
 
                         </li>
@@ -57,15 +96,15 @@
 
 @section('js')
 <script>
-    $(document).ready(function() {
-        $('input[type="checkbox"]').on('change', function() {
-            var listItem = $(this).closest('li');
-            if ($(this).is(':checked')) {
-                listItem.addClass('completed');
-            } else {
-                listItem.removeClass('completed');
-            }
-        });
+$(document).ready(function() {
+    $('input[type="checkbox"]').on('change', function() {
+        var listItem = $(this).closest('li');
+        if ($(this).is(':checked')) {
+            listItem.addClass('completed');
+        } else {
+            listItem.removeClass('completed');
+        }
     });
+});
 </script>
 @endsection

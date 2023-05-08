@@ -29,6 +29,18 @@ class TaskController extends Controller
         return redirect()->route('all_tasks', encrypt($request->list_id));
     }
 
+    public function edit(Request $request)
+    {
+        $request->validate(
+            [
+                'task' => 'required',
+            ]
+        );
+        Task::editTask($request);
+
+        return back()->with('success_msg', 'Task edited successfully.');
+    }
+
     public function destroy(Request $request)
     {
         Task::deleteTask($request);

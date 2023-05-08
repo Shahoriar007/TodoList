@@ -19,12 +19,21 @@ class Task extends Model
         ]);
     }
 
+    public static function editTask($request)
+    {
+        $id = decrypt($request->id);
+        $data = Task::find($id);
+
+        $data->task = $request->task;
+        $data->save();
+    }
+
     public static function deleteTask($request)
     {
         $id = decrypt($request->id);
 
         $data = Task::find($id);
-        
+
         if ($data) {
             $data->delete();
         }
