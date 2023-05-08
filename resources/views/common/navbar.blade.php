@@ -12,7 +12,7 @@
                 <div class="right"></div>
             </div>
 
-            <li class="nav-item active">
+            <li class="nav-item {{ Request::is('all-tasks*') ? '' : 'active' }}">
                 <a class="nav-link" href="{{ route('all_lists') }}"><i class="far fa-address-book"></i>All Lists</a>
             </li>
 
