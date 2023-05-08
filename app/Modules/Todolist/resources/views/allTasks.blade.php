@@ -36,9 +36,7 @@
                                 </label>
                             </div>
 
-                            <button data-toggle="modal" data-target="#edit_{{$task->id}}">
-                                <i class="fa fa-edit"></i>
-                            </button>
+                            <a href="#" data-toggle="modal" data-target="#edit_{{$task->id}}"><i class="fa fa-edit"></i></a>
 
                             <!-- Modal -->
                             <div class="modal" id="edit_{{$task->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
