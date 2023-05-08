@@ -38,4 +38,9 @@ class Task extends Model
             $data->delete();
         }
     }
+
+    public function alllists()
+    {
+        return $this->belongsTo(Alllist::class);
+    }
 }

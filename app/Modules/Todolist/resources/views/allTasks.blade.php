@@ -6,7 +6,10 @@
     <div class="col-md-12">
         <div class="card px-3">
             <div class="card-body">
-                <h4 class="card-title">Name</h4>
+
+                @if(!empty($tasks[0]->list_name))
+                    <h4 class="card-title text-center font-weight-bold" style="font-size: 24px;">{{$tasks[0]->list_name}}</h4>
+                @endif
 
                 <form action="{{ route('create_tasks') }}" method="POST">
                     @csrf

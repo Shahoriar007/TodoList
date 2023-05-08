@@ -36,4 +36,9 @@ class Alllist extends Model
             $data->delete();
         }
     }
+
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
 }
