@@ -81,7 +81,7 @@
                             <ul class="list-unstyled mt-3 mb-4">
 
                             </ul>
-                            <button type="button" class="w-100 btn btn-lg btn-outline-primary">View Details</button>
+                            <a  href="{{ route('all_tasks', ['id' => encrypt($list->id)]) }}" class="w-100 btn btn-lg btn-outline-primary">View Details</a>
                         </div>
                     </div>
 
